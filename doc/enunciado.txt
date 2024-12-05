@@ -1,0 +1,31 @@
+Enunciado: Desarrollo de un Juego de Tres en Raya (Tic-Tac-Toe) con HTML, CSS y JavaScript
+Descripción General:
+Crea un juego interactivo de Tres en Raya (Tic-Tac-Toe) que pueda ser jugado por dos jugadores en el mismo dispositivo. El diseño debe ser responsivo y visualmente atractivo. Usa HTML para la estructura del juego, CSS para los estilos visuales y JavaScript para la lógica interactiva.
+
+Requisitos Técnicos:
+HTML (Estructura del Juego):
+
+Crea una estructura básica que contenga:
+Un título que indique el nombre del juego.
+Un contenedor para el tablero del Tres en Raya, dividido en una cuadrícula de 3x3.
+Elementos para mostrar mensajes como el turno actual, el ganador o un empate.
+Un botón para reiniciar el juego.
+CSS (Estilo Visual):
+
+Diseña un tablero de juego centrado en la página con una cuadrícula clara de 3x3.
+Agrega estilos visuales para:
+Las casillas del tablero, con bordes visibles.
+Estados del juego (por ejemplo, casillas marcadas con "X" o "O").
+Indicaciones del jugador actual, ganador, o empate.
+El botón de reinicio.
+Asegúrate de que el diseño sea responsivo y que funcione bien en dispositivos móviles.
+JavaScript (Lógica del Juego):
+
+Implementa la lógica para controlar las siguientes funciones:
+Identificar el jugador actual (alternando entre "X" y "O").
+Registrar los movimientos de los jugadores en las casillas.
+Determinar si hay un ganador o un empate después de cada movimiento.
+Mostrar un mensaje al jugador cuando gane o cuando el juego termine en empate.
+Permitir reiniciar el juego para empezar una nueva partida.
+
+

@@ -1,0 +1,17 @@
+{
+  "name": "dinamiclist",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start:server": "node src/server/server.js",
+    "start:client": "serve src/client/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "serve": "^14.2.4"
+  }
+}
