@@ -24,25 +24,13 @@ connection.connect((err) => {
 
 
 
-
 const server = createServer((req, res) => {
-
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  // res.setHeader('Access-Control-Allow-Methods', '*');
+  res.setHeader('Access-Control-Allow-Origin', 'localhost:3000');
+  res.setHeader('Access-Control-Allow-Headers', '*');
+  res.setHeader('Content-Type', 'application/json');
 
   console.log({ method: req.method, url: req.url });
-
-
-
-
-// OPTIONS
-if (req.method === 'OPTIONS') {
-  res.writeHead(204,);
-  res.end();
-
-  return;
-}
 
 
 
@@ -50,7 +38,6 @@ if (req.method === 'OPTIONS') {
 // GET  
   if (req.method === 'GET' && req.url === '/items') {
     connection.query('SELECT * FROM items', function (error, results, fields) {
-      res.writeHeader(200,);
       res.end(JSON.stringify(results, null, 2));
     });
 
@@ -59,26 +46,26 @@ if (req.method === 'OPTIONS') {
 
 
 
-
-
 // POST
   if (req.method === 'POST' && req.url === '/items') {
     let body = '';
 
-    req.on('data', (data) => {
-        body += data;
+    req.on('data', (chunk) => {
+        body += chunk;
     });
 
     req.on('end', () => {
         const { item } = JSON.parse(body);
         connection.query('INSERT INTO items (name) VALUES (?)', [item], (error, results) => {
-            res.writeHead(201, { 'Content-Type': 'application/json' });
+            res.writeHead(201);
             res.end(JSON.stringify({ success: true, id: results.insertId }));
         });
     });
-}
 
+    return;
+  }
 
+  res.end();
 
 
 
