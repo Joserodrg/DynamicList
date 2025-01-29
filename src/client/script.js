@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  let list = [];
   let listForm = document.getElementById("listForm");
 
   listForm.addEventListener("submit", saveItem);
@@ -43,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch("http://localhost:5000/items")
       .then((response) => response.json())
       .then(function (data) {
-        list = []; 
+        list = [];
         for (let i = 0; i < data.length; i++) {
           list.push(data[i].name);
         }
